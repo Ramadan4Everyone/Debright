@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debright ventures</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="section">
+
+
+    <nav>
+        <div class="list">
+            <a href="" ><li class="home">Home</li></a>
+            <a href="service.html"><li class="fff">Featured</li></a>
+            <a href="https://wa.me/2348055866031"><li class="con">Contact</li></a>
+        </div>
+    </nav>
+
+
+    <div class="section-div">
+
+        <div class="main">
+
+            <div class="text">
+                <h1>Debright computer business <br><span>center</span></h1>
+            </div>
+
+
+           <a href="sign.html"><button>Sign up</button></a> 
+
+
+         </div>
+    </div>
+
+    <div class="box1">
+
+        <div class="text-graphics"><a href="graphics.html">Graphics Design</a></div>
+        <div><img src="graphi.jpeg" alt="" class="Graphics-img"></div>
+    </div>
+
+
+    <div class="box1">
+        <div class="text-graphics"><a href="">Nin Registration</a></div>
+        <div><img src="nims.jpeg" alt="" class="Graphics-img"></div>
+    </div>
+
+
+
+    <div class="box1">
+        <div class="text-graphics"><a href="">Sim Registration</a></div>
+        <div><img src="sim.jpeg" alt="" class="Graphics-img"></div>
+    </div>
+
+
+    </div>
+
+
+    <div class="box1">
+        <div class="text-graphics"><a href="">Computer Training</a></div>
+        <div><img src="train.jpeg" alt="" class="Graphics-img"></div>
+    </div>
+</div>
+
+
+    <div class="box1">
+        <div class="text-graphics"><a href="">Photoshoot Studio</a></div>
+        <div><img src="STUDIO.jpg" alt="" class="Graphics-img"></div>
+    </div>
+
+    
+    <footer class="footer-section">
+       <h2 class="footer-section-text">contact details</h2> 
+       <div class="footer-section-text-contact">
+        <i class="fa-solid fa-message"></i>
+        <a href=""><span>Wassap contact</span> <br> <br> <i class="fa-brands fa-facebook"></i></a>
+        <a href=""><span>Facebook contact</span> <br> <br> <i class="fa-brands fa-twitter"></i></a>
+        <a href=""><span>Twitter Contact</span> <br> <br><i class="fa-solid fa-instagram"></i></a>
+        <a href=""><span>Instagram Contact</span> <br> <br><i class="fa-solid fa-user"></i></a>
+        <a href=""><span>Direct call</span> </a>
+       </div>
+       <div class="validation-form">
+        <input type="text" id="phoneNumber" placeholder="Enter phone number"/>
+<button onclick="validateAndGenerate()" class="validate-btn">Chat on WhatsApp</button>
+
+<script>
+function validateAndGenerate() {
+  const number = document.getElementById('phoneNumber').value.trim();
+  
+  // Simple validation: check if number contains only digits and has a length (for example 10-15)
+  const phoneRegex = /^\d{10,15}$/;
+  if (phoneRegex.test(number)) {
+    // Generate WhatsApp link
+    const url = `https://wa.me/${number}`;
+    window.open(url, '_blank');
+  } else {
+    alert('Please enter a valid phone number (10-15 digits)');
+  }
+}
+</script>
+    </div>
+    </footer>
+</body>
+</html>
