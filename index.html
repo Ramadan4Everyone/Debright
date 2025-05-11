@@ -1,109 +1,81 @@
-html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Login</title>
+<title>Name Collection Form</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: 'Helvetica Neue', sans-serif;
+  }
+
+  form {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  input[type="text"] {
+    width: 80%;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  button {
+    background-color: #667eea;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #5a67d8;
+  }
+</style>
 </head>
 <body>
-<style>
-    *{
-        margin: 0 auto;
-    }
-    body{
-        background: linear-gradient(to right, #ff7e5f, #feb47b);
-    }
-    input{
-        width: 300px;
-        height: 50px;
-        border-radius: 20px;
-        outline: none;
-        border: none;
-    }
-    form{
-        margin-left: 400px;
-    }
-    h2{
-        margin-left: 500px;
-        font-size: 30px;
-        margin-bottom: 20px;
-    }
-    button{
-        width: 200px;
-        height: 30px;
-        font: bold;
-        font-size: 20px;
-        margin-left: 150px;
-        border-radius: 20px;
-        outline: none;
-        border: none;
-    }
-    label{
-        font-size: 25px;
-    }
-    @media (max-width: 550px){
-      body{
-        background: linear-gradient(to right, #ff7e5f, #feb47b);
-    }
-    input{
-        width: 300px;
-        height: 50px;
-        border-radius: 20px;
-        outline: none;
-        border: none;
-    }
-    form{
-        margin-left: 10px;
-    }
-    h2{
-        margin-left: 100px;
-        font-size: 30px;
-        margin-bottom: 20px;
-    }
-    button{
-        width: 200px;
-        height: 30px;
-        font: bold;
-        font-size: 20px;
-        border-radius: 20px;
-        outline: none;
-        border: none;
-        margin-left: -2px;
-        margin-left: 50px;
-    }
-    label{
-        font-size: 25px;
-    }
-    }
-</style>
-<h2>Login Form</h2>
 
-<form id="loginForm">
-  <label for="username">Username:</label>
-  <input type="text" id="username" required />
-  <br><br>
-  <label for="password">Password:</label>
-  <input type="password" id="password" required />
-  <br><br>
-  <button type="submit">Login</button>
+<form id="nameForm">
+  <h2>Enter Your Name</h2>
+  <input type="text" id="name" placeholder="Your Name" required />
+  <br />
+  <button type="submit">Next</button>
 </form>
 
 <script>
-   const validUsername = 'debright';
-  const validPassword = 'ventures';
-
-  document.getElementById('loginForm').addEventListener('submit', function(e) {
+  document.getElementById('nameForm').addEventListener('submit', function(e) {
     e.preventDefault();
-
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    if (username === validUsername && password === validPassword) {
-      // Redirect to another page upon success
+    const nameInput = document.getElementById('name');
+    const name = nameInput.value.trim();
+    if (name) {
+      // Store the name in localStorage
+      let names = JSON.parse(localStorage.getItem('names')) || [];
+      names.push(name);
+      localStorage.setItem('names', JSON.stringify(names));
+      
+      // Redirect to next page
       window.location.href = 'log.html';
-    } else {
-      alert('Invalid username or password');
     }
   });
 </script>
