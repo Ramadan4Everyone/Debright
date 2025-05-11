@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Interactive Market</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fef8e7;
+    margin: 0;
+    padding: 0;
+  }
+
+.header {
+    background-color: #ff6f61;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+  }
+
+.market {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+  }
+
+.stall {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    width: 200px;
+    margin: 15px;
+    padding: 10px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+.stall:hover {
+    transform: scale(1.05);
+  }
+
+.stall img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+.item-name {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+.price {
+    color: #4CAF50;
+    margin-top: 5px;
+  }
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    display: none;
+    z-index: 999;
+  }
+
+.popup h2 {
+    margin-top: 0;
+  }
+
+.close-btn {
+    margin-top: 15px;
+    padding: 8px 15px;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Welcome to Debright Multivntures</h1>
+</div>
+
+<div class="market">
+  <!-- Stall 1 -->
+  <div class="stall" onclick="showDetails('Computer Training', 'N30,000 per Student', 'We Provide The Best Teaching And Monitoring.', 'download.jpeg')">
+    <img src="download.jpeg" alt="Apples" />
+    <div class="item-name">Computer Training</div>
+    <div class="price">N30,000 per Student </div>
+  </div>
+
+  <!-- Stall 2 -->
+  <div class="stall" onclick="showDetails('Graphics Designing', 'N2,000 per copy', 'We Make The Best Graphics Packaging And Presentation.', 'graphi.jpeg')">
+    <img src="graphi.jpeg" alt="Eggs" />
+    <div class="item-name">Graphics Design</div>
+    <div class="price">N2,000 per copy</div>
+  </div>
+
+  <!-- Stall 3 -->
+  <div class="stall" onclick="showDetails('Sim Registration', '$1,000 per Each', 'Get your Sim Card instantly Without Delay.', 'download (2).jpeg')">
+    <img src="download (1).jpeg" alt="Carrots" />
+    <div class="item-name">Sim Registration</div>
+    <div class="price">N1,000 per Each</div>
+  </div>
+</div>
+
+<!-- Popup for item details -->
+<div id="itemPopup" class="popup">
+  <h2 id="popupTitle"></h2>
+  <img id="popupImage" src="" alt="" style="width:100%; border-radius:8px;"/>
+  <p id="popupPrice"></p>
+  <p id="popupDescription"></p>
+  <button class="close-btn" onclick="closePopup()">Close</button>
+</div>
+
+<script>
+  function showDetails(title, price, description, image) {
+    document.getElementById('popupTitle').innerText = title;
+    document.getElementById('popupPrice').innerText = price;
+    document.getElementById('popupDescription').innerText = description;
+    document.getElementById('popupImage').src = image;
+    document.getElementById('itemPopup').style.display = 'block';
+  }
+
+  function closePopup() {
+    document.getElementById('itemPopup').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>

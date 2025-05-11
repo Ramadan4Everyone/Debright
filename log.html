@@ -9,12 +9,43 @@
 </head>
 <body>
     <div class="section">
-
+        <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
+          }
+        </style>
+        
+        <script>
+          const images = [
+            '25f6725a24b7167191e4545efa3bbc53.jpg',
+            'kllmmmmmm.jpg',
+            'mmmmmmmmmmmmmm.jpeg',
+            'maxresdefault.jpg'
+          ];
+        
+          let currentIndex = 0;
+        
+          function changeBackground() {
+            document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
+            currentIndex = (currentIndex + 1) % images.length;
+          }
+        
+          // Initialize first image
+          changeBackground();
+        
+          // Change background every 5 seconds
+          setInterval(changeBackground, 5000);
+        </script>
+        
 
     <nav>
         <div class="list">
             <a href="" ><li class="home">Home</li></a>
-            <a href="service.html"><li class="fff">Featured</li></a>
+            <a href="search.html"><li class="fff">Featured</li></a>
             <a href="https://wa.me/2348055866031"><li class="con">Contact</li></a>
         </div>
     </nav>
@@ -23,13 +54,37 @@
     <div class="section-div">
 
         <div class="main">
+            <style>
+                @keyframes bounceColor {
+                  0%, 100% { color: #ff6f61; }
+                  50% { color: #4facfe; }
+                }
+              
+                @keyframes fadeIn {
+                  from { opacity: 0; }
+                  to { opacity: 1; }
+                }
+              
+                .animated-text {
+                  font-size: 50px;
+                  font-weight: bold;
+                  animation: fadeIn 2s ease-in-out, bounceColor 3s infinite alternate;
+                  text-align: center;
+                  margin-top: 20vh;
+                }
+              </style>
+              </head>
+              <body>
+              
+              <div class="animated-text">
+                🚀 Welcome to Debright Multiventures! 🌟
+              </div>
 
-            <div class="text">
-                <h1>Debright computer business <br><span>center</span></h1>
-            </div>
 
-
-           <a href="sign.html"><button>Sign up</button></a> 
+            <form action="https://www.google.com/search" method="get" target="_blank">
+                <input type="text" id="search-input" name="q" placeholder="Search Google..." />
+                <button type="submit">Search</button>
+              </form>
 
 
          </div>
